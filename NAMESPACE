@@ -1,0 +1,4 @@
+import(graphics, stats, MCMCpack)
+export(bac, summary.bacr, plot.bacr)
+S3method(summary, bacr)
+S3method(plot, bacr)

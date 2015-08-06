@@ -1,0 +1,10 @@
+26b27c2fc684b5f44b0ae4681b6addab *DESCRIPTION
+1a1c05d8068ada33c67096b65f06e045 *NAMESPACE
+db4fb5547ce8c95caa9832678300a152 *R/bac.R
+47d9fed2206b762fdb33ba576316ba12 *R/plot.R
+eb201314b26d0fc75e79531e123b9558 *R/summary.R
+07d39c4fae9174fdf562562d7ce0d22f *R/util.R
+3822456dc7c1add14812b454bf3ccb18 *man/bac.Rd
+f9adc35cdef77fa50f0e2eaf0553f7c0 *man/bacr-package.Rd
+3bb437d0e382732eb080770aeedf8463 *man/plot.bacr.Rd
+1499a67b215a249d844c962425a32028 *man/summary.bacr.Rd
