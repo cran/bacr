@@ -94,11 +94,11 @@ a list of model parameters
 }
 }
 \references{
- Wang C, Dominici F, Parmigiani G, Zigler CW. (2015).
+ Wang C, Dominici F, Parmigiani G, Zigler CW.
   Accounting for Uncertainty in Confounder and Effect Modifier
 Selection When Estimating Average Causal Effects in Generalized
-Linear Models.
-  \emph{Biometrics, to appear}.
+Linear Models.\cr
+  \emph{Biometrics, 71(3): 654-665, 2015.}
 }
 \author{
 Chi Wang

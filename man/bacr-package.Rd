@@ -13,9 +13,9 @@ selection and allows estimation of the ACE for the whole population or for a spe
 \tabular{ll}{
 Package: \tab bacr\cr
 Type: \tab Package\cr
-Version: \tab 1.0\cr
+Version: \tab 1.0.1\cr
 Depends: \tab R(>= 2.13.0), graphics, stats, MCMCpack\cr
-Date: \tab 2015-08-06\cr
+Date: \tab 2016-10-23\cr
 License: \tab GPL-2
 }
 
@@ -26,11 +26,11 @@ Chi Wang
 Maintainer: Chi Wang <chi.wang@uky.edu>
 }
 \references{
- Wang C, Dominici F, Parmigiani G, Zigler CW. (2015).
+ Wang C, Dominici F, Parmigiani G, Zigler CW.
   Accounting for Uncertainty in Confounder and Effect Modifier
 Selection When Estimating Average Causal Effects in Generalized
-Linear Models.
-  \emph{Biometrics, to appear}.
+Linear Models.\cr
+  \emph{Biometrics, 71(3): 654-665, 2015.}
 }
 \keyword{BAC}
 

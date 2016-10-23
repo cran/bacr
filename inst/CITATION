@@ -1,0 +1,19 @@
+citHeader("To cite bacr in publications use:")
+
+citEntry(entry = "Article",
+  title        = "Accounting for uncertainty in confounder and effect modifier selection when estimating average causal effects in generalized linear models",
+  author       = personList(as.person("Chi Wang"),
+                   as.person("Francesca Dominici"),
+                   as.person("Giovanni Parmigiani"),
+                   as.person("Corwin Matthew Zigler")),
+  journal      = "Biometrics",
+  year         = "2015",
+  volume       = "71",
+  number       = "3",
+  pages        = "654--665",
+
+  textVersion  =
+  paste("Chi Wang, Francesca Dominici, Giovanni Parmigiani, Corwin Matthew Zigler (2015).",
+        "Accounting for uncertainty in confounder and effect modifier selection when estimating average causal effects in generalized linear models.",
+        "Biometrics, 71(3), 654-665.")
+)

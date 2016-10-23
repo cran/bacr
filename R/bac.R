@@ -46,24 +46,25 @@ bac <- function(data, exposure, outcome, confounders, interactors, familyX, fami
                 tuning = 1.0
                 temp = update_alpha(exposure, predictorsX, M0X, M1X, a0X, tuning, familyX, data)
                 M0X = temp$M; a0X = temp$a0
-            } else{
-	            j = sample(1:m,1)
-                M1X[j] = 1 - M1X[j]
-                if (MY[k-1,j] == 1){
-                    tuning = 1.0
-                } else{
-	                tuning = omega^(M0X[j] - M1X[j])
-                }
-                temp = update_alpha(exposure, predictorsX, M0X, M1X, a0X, tuning, familyX, data)
-                M0X = temp$M; a0X = temp$a0
             }
-            MX[k,] = M0X
-            #update outcome model
-            M0Y = MY[k-1,]
-            M1Y = M0Y
-            ind = rep(0, m)
-            ind[interactions] = M0Y[-c(1:m, mm+1)]
+        } else{
+	        j = sample(1:m,1)
+            M1X[j] = 1 - M1X[j]
+            if (MY[k-1,j] == 1){
+                tuning = 1.0
+            } else{
+	            tuning = omega^(M0X[j] - M1X[j])
+            }
+            temp = update_alpha(exposure, predictorsX, M0X, M1X, a0X, tuning, familyX, data)
+            M0X = temp$M; a0X = temp$a0
         }
+        MX[k,] = M0X
+        #update outcome model
+        M0Y = MY[k-1,]
+        M1Y = M0Y
+        ind = rep(0, m)
+        ind[interactions] = M0Y[-c(1:m, mm+1)]
+            
         if (omega == Inf){
             candidate = c((1:m)[(ind==0) & (MX[k,]==0)], (1:mm)[-(1:m)][M0Y[interactions]==1])
             if (length(candidate)>0){
@@ -76,14 +77,15 @@ bac <- function(data, exposure, outcome, confounders, interactors, familyX, fami
                 tuning = 1.0
                 temp = update_alpha(outcome, predictorsY, M0Y, M1Y, a0Y, tuning, familyY, data)
                 M0Y = temp$M; a0Y = temp$a0
-            } else{
-                candidate = c((1:m)[(ind==0)], (1:mm)[-(1:m)])
-                if (length(candidate)>0){
-                    if (length(candidate)>1){
-  	                    j = sample(candidate, 1)
-                    } else{
-                        j = candidate
-                    }
+            }
+        } else{
+            candidate = c((1:m)[(ind==0)], (1:mm)[-(1:m)])
+            if (length(candidate)>0){
+                if (length(candidate)>1){
+  	                j = sample(candidate, 1)
+                } else{
+                    j = candidate
+                }
                 M1Y[j] = 1 - M1Y[j]
                 tuning = 1.0
                 if (j<=m){
@@ -93,10 +95,9 @@ bac <- function(data, exposure, outcome, confounders, interactors, familyX, fami
                 }
                 temp = update_alpha(outcome, predictorsY, M0Y, M1Y, a0Y, tuning, familyY, data)
                 M0Y = temp$M; a0Y = temp$a0
-                }
             }
-            MY[k,] = M0Y
         }
+        MY[k,] = M0Y
     }
     MX = MX[-(1:burnM),]
     MY = MY[-(1:burnM),]
